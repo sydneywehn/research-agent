@@ -76,14 +76,16 @@ An index of all runs is appended to `traces/index.jsonl` for easy querying.
 
 ## Key Design Decisions
 
-### LLM: Groq (llama-3.1-8b-instant)
+### LLM: Groq (llama-3.3-70b-versatile)
 
-**Choice**: Groq's free tier running `llama-3.1-8b-instant`.
+**Choice**: Groq's free tier running `llama-3.3-70b-versatile`.
 
 **Why Groq over a local model:**
 - No GPU required — reviewers can run the agent on any machine without installing Ollama or downloading multi-GB weights
-- `llama-3.1-8b-instant` runs on a separate rate-limit pool from the larger Groq models, making it practical for multi-step eval runs without hitting 429s
+- `llama-3.3-70b-versatile` has strong instruction-following and JSON output reliability, which matters for the ReAct loop's structured response format
 - Groq's inference is fast enough that multi-step runs complete in seconds rather than minutes
+
+**Model fallback**: If you hit rate limits with `llama-3.3-70b-versatile`, switch to `llama-3.1-8b-instant` in `core/llm.py` — it runs on a separate rate-limit pool on Groq's free tier. Reasoning quality is weaker but it's practical for batch eval runs. Automatic fallback between models is listed as a future improvement.
 
 **Tradeoffs vs. a local model (e.g. Ollama + Llama 3.2-3B):**
 
@@ -367,3 +369,4 @@ Unable to synthesize a complete answer. (Sources: 4 arXiv papers returned but no
 - **Internal document support**: Add a vector store tool (e.g. ChromaDB) so the agent can search internal PDFs and documents alongside public APIs.
 - **Component-level evals**: The current eval harness measures end-to-end answer quality, but individual components (classifier accuracy, retrieval relevance, answer synthesis quality) should each have their own test suite. This would make it easier to isolate failures — e.g. is a bad answer caused by poor retrieval or poor synthesis?
 - **Inline clickable citations**: Format the final answer with numbered footnotes or markdown hyperlinks so citations are embedded inline rather than listed at the bottom. This would make the output more readable and directly verify-able by the analyst.
+- **Automatic model fallback**: Switch from `llama-3.3-70b-versatile` to `llama-3.1-8b-instant` automatically when rate limits are hit, rather than requiring a manual config change.
