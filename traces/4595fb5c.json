@@ -1,0 +1,141 @@
+{
+  "run_id": "4595fb5c",
+  "question": "What are the Basel III capital requirements for banks?",
+  "timestamp": "2026-04-16T16:15:44.308704+00:00",
+  "classifier": {
+    "scope": "in_scope",
+    "reason": "The question pertains to banking regulations, specifically the Basel III capital requirements for banks.",
+    "domain": "factual"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "thought": "To find the Basel III capital requirements for banks, I should start by searching for an overview of Basel III on Wikipedia.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Basel III"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Basel III",
+        "results": [
+          {
+            "title": "Basel III",
+            "extract": "Basel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III"
+          },
+          {
+            "title": "Basel Accords",
+            "extract": "The Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).",
+            "url": "https://en.wikipedia.org/wiki/Basel_Accords"
+          },
+          {
+            "title": "Basel III: Finalising post-crisis reforms",
+            "extract": "Basel III: Finalising post-crisis reforms, sometimes called the Basel III Endgame in the United States, Basel 3.1 in the United Kingdom, or Capital Requirements Regulations III (CRR III) in the European Union, are additional changes to international standards for bank capital requirements that were agreed by the Basel Committee on Banking Supervision (BCBS) on 7 December 2017 as part of Basel III, first published in 2010. They have also been referred to as Basel IV; however, the secretary general of Basel Committee said in a 2016 speech he did not view the changes as substantial enough to describe them in such a way.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms"
+          }
+        ],
+        "summary": "**Basel III**\nBasel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.\n\n---\n\n**Basel Accords**\nThe Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).\n\n---\n\n**Basel III: Finalising post-crisis reforms**\nBasel III: Finalising post-crisis reforms, sometimes called the Basel III Endgame in the United States, Basel 3.1 in the United Kingdom, or Capital Requirements Regulations III (CRR III) in the European Union, are additional changes to international standards for bank capital requirements that were agreed by the Basel Committee on Banking Supervision (BCBS) on 7 December 2017 as part of Basel III, first published in 2010. They have also been referred to as Basel IV; however, the secretary general of Basel Committee said in a 2016 speech he did not view the changes as substantial enough to describe them in such a way.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Basel_III",
+          "https://en.wikipedia.org/wiki/Basel_Accords",
+          "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms"
+        ],
+        "error": null
+      },
+      "duration_seconds": 0.5124650001525879
+    },
+    {
+      "step": 2,
+      "thought": "The overview of Basel III from Wikipedia provides a general understanding, but to find the specific capital requirements, I need to search for more detailed information on the components of Basel III, such as the Tier 1 and Tier 2 capital requirements.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Basel III capital requirements"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Basel III capital requirements",
+        "results": [
+          {
+            "title": "Basel III",
+            "extract": "Basel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III"
+          },
+          {
+            "title": "Basel Accords",
+            "extract": "The Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).",
+            "url": "https://en.wikipedia.org/wiki/Basel_Accords"
+          },
+          {
+            "title": "Capital requirement",
+            "extract": "A capital requirement is the amount of capital a bank or other financial institution has to have as required by its financial regulator. This is usually expressed as a capital adequacy ratio of equity as a percentage of risk-weighted assets. These requirements are put into place to ensure that these institutions do not take on excess leverage and risk becoming insolvent. Capital requirements govern the ratio of equity to debt, recorded on the liabilities and equity side of a firm's balance sheet. They should not be confused with reserve requirements, which govern the assets side of a bank's balance sheet\u2014in particular, the proportion of its assets it must hold in cash or highly-liquid assets. Capital is a source of funds, not a use of funds.",
+            "url": "https://en.wikipedia.org/wiki/Capital_requirement"
+          }
+        ],
+        "summary": "**Basel III**\nBasel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.\n\n---\n\n**Basel Accords**\nThe Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).\n\n---\n\n**Capital requirement**\nA capital requirement is the amount of capital a bank or other financial institution has to have as required by its financial regulator. This is usually expressed as a capital adequacy ratio of equity as a percentage of risk-weighted assets. These requirements are put into place to ensure that these institutions do not take on excess leverage and risk becoming insolvent. Capital requirements govern the ratio of equity to debt, recorded on the liabilities and equity side of a firm's balance sheet. They should not be confused with reserve requirements, which govern the assets side of a bank's balance sheet\u2014in particular, the proportion of its assets it must hold in cash or highly-liquid assets. Capital is a source of funds, not a use of funds.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Basel_III",
+          "https://en.wikipedia.org/wiki/Basel_Accords",
+          "https://en.wikipedia.org/wiki/Capital_requirement"
+        ],
+        "error": null
+      },
+      "duration_seconds": 1.2056739330291748
+    },
+    {
+      "step": 3,
+      "thought": "The Wikipedia results provide an overview of Basel III and its goals but lack specific details on the capital requirements. To find the exact requirements, I should search for the specific components of Basel III, such as Tier 1 and Tier 2 capital requirements.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Basel III Tier 1 and Tier 2 capital requirements"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Basel III Tier 1 and Tier 2 capital requirements",
+        "results": [
+          {
+            "title": "Tier 1 capital",
+            "extract": "\nTier 1 capital is the core measure of a bank's financial strength from a regulator's point of view. It is composed of core capital, which consists primarily of common stock and disclosed reserves, but may also include non-redeemable non-cumulative preferred stock as well as physical gold held in vaults. The Basel Committee also observed that banks have used innovative instruments over the years to generate Tier 1 capital; these are subject to stringent conditions and are limited to a maximum of 15% of total Tier 1 capital. This part of the Tier 1 capital will be phased out during the implementation of Basel III.",
+            "url": "https://en.wikipedia.org/wiki/Tier_1_capital"
+          },
+          {
+            "title": "Basel III",
+            "extract": "Basel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III"
+          },
+          {
+            "title": "Capital requirement",
+            "extract": "A capital requirement is the amount of capital a bank or other financial institution has to have as required by its financial regulator. This is usually expressed as a capital adequacy ratio of equity as a percentage of risk-weighted assets. These requirements are put into place to ensure that these institutions do not take on excess leverage and risk becoming insolvent. Capital requirements govern the ratio of equity to debt, recorded on the liabilities and equity side of a firm's balance sheet. They should not be confused with reserve requirements, which govern the assets side of a bank's balance sheet\u2014in particular, the proportion of its assets it must hold in cash or highly-liquid assets. Capital is a source of funds, not a use of funds.",
+            "url": "https://en.wikipedia.org/wiki/Capital_requirement"
+          }
+        ],
+        "summary": "**Tier 1 capital**\n\nTier 1 capital is the core measure of a bank's financial strength from a regulator's point of view. It is composed of core capital, which consists primarily of common stock and disclosed reserves, but may also include non-redeemable non-cumulative preferred stock as well as physical gold held in vaults. The Basel Committee also observed that banks have used innovative instruments over the years to generate Tier 1 capital; these are subject to stringent conditions and are limited to a maximum of 15% of total Tier 1 capital. This part of the Tier 1 capital will be phased out during the implementation of Basel III.\n\n---\n\n**Basel III**\nBasel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.\n\n---\n\n**Capital requirement**\nA capital requirement is the amount of capital a bank or other financial institution has to have as required by its financial regulator. This is usually expressed as a capital adequacy ratio of equity as a percentage of risk-weighted assets. These requirements are put into place to ensure that these institutions do not take on excess leverage and risk becoming insolvent. Capital requirements govern the ratio of equity to debt, recorded on the liabilities and equity side of a firm's balance sheet. They should not be confused with reserve requirements, which govern the assets side of a bank's balance sheet\u2014in particular, the proportion of its assets it must hold in cash or highly-liquid assets. Capital is a source of funds, not a use of funds.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Tier_1_capital",
+          "https://en.wikipedia.org/wiki/Basel_III",
+          "https://en.wikipedia.org/wiki/Capital_requirement"
+        ],
+        "error": null
+      },
+      "duration_seconds": 0.7371480464935303
+    },
+    {
+      "step": 4,
+      "thought": "Basel III capital requirements for banks involve Tier 1 and Tier 2 capital, with specific ratios and components.",
+      "action": null,
+      "observation": null,
+      "duration_seconds": 1.3455522060394287
+    }
+  ],
+  "final_answer": "**[RETRIEVED \u2014 from tool results]**\nTier 1 capital is composed of core capital, which consists primarily of common stock and disclosed reserves [Source: https://en.wikipedia.org/wiki/Tier_1_capital]. Basel III sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage [Source: https://en.wikipedia.org/wiki/Basel_III].\n\n**[REASONING \u2014 model analysis/inference]**\nModel reasoning suggests that the exact capital requirements, such as the specific ratios for Tier 1 and Tier 2 capital, are crucial for understanding the regulatory framework. However, the provided Wikipedia results lack specific details on these ratios.",
+  "citations": [
+    "https://en.wikipedia.org/wiki/Tier_1_capital",
+    "https://en.wikipedia.org/wiki/Basel_III",
+    "https://en.wikipedia.org/wiki/Basel_Accords",
+    "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms",
+    "https://en.wikipedia.org/wiki/Capital_requirement"
+  ],
+  "total_steps": 4,
+  "total_duration_seconds": 6.132920026779175,
+  "error": null
+}

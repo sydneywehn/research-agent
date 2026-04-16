@@ -1,0 +1,16 @@
+{
+  "run_id": "a6d39c26",
+  "question": "Who won the Super Bowl this year?",
+  "timestamp": "2026-04-16T16:09:57.895323+00:00",
+  "classifier": {
+    "scope": "out_of_scope",
+    "reason": "The question is about a sports event, which is not related to financial or economic research.",
+    "domain": "factual"
+  },
+  "steps": [],
+  "final_answer": "This question is outside the scope of this financial research assistant.\n\nReason: The question is about a sports event, which is not related to financial or economic research.\n\nI can help with banking regulations, monetary policy, economic data, academic finance research, and related topics.",
+  "citations": [],
+  "total_steps": 0,
+  "total_duration_seconds": 1.2872259616851807,
+  "error": null
+}

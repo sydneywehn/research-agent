@@ -12,6 +12,7 @@ import json
 import sys
 import time
 from pathlib import Path
+from typing import List, Optional
 from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env")
@@ -84,7 +85,7 @@ def score_answer(answer: str, trace, spec: dict) -> dict:
     }
 
 
-def run_evals(ids: list[str] | None = None, category: str | None = None):
+def run_evals(ids: Optional[List[str]] = None, category: Optional[str] = None):
     RESULTS_DIR.mkdir(exist_ok=True)
 
     benchmark = json.loads(BENCHMARK.read_text())

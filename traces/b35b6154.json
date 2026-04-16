@@ -1,0 +1,154 @@
+{
+  "run_id": "b35b6154",
+  "question": "What are the Basel III capital requirements for banks?",
+  "timestamp": "2026-04-16T16:04:28.678773+00:00",
+  "classifier": {
+    "scope": "in_scope",
+    "reason": "The question pertains to banking regulations, specifically the Basel III capital requirements for banks.",
+    "domain": "factual"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "thought": "To find the Basel III capital requirements for banks, I should start by searching Wikipedia for an overview of the Basel III accord and its capital requirements.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Basel III"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Basel III",
+        "results": [
+          {
+            "title": "Basel III",
+            "extract": "Basel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III"
+          },
+          {
+            "title": "Basel Accords",
+            "extract": "The Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).",
+            "url": "https://en.wikipedia.org/wiki/Basel_Accords"
+          },
+          {
+            "title": "Basel III: Finalising post-crisis reforms",
+            "extract": "Basel III: Finalising post-crisis reforms, sometimes called the Basel III Endgame in the United States, Basel 3.1 in the United Kingdom, or Capital Requirements Regulations III (CRR III) in the European Union, are additional changes to international standards for bank capital requirements that were agreed by the Basel Committee on Banking Supervision (BCBS) on 7 December 2017 as part of Basel III, first published in 2010. They have also been referred to as Basel IV; however, the secretary general of Basel Committee said in a 2016 speech he did not view the changes as substantial enough to describe them in such a way.",
+            "url": "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms"
+          }
+        ],
+        "summary": "**Basel III**\nBasel III is the third of three Basel Accords, a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage, with the goal of mitigating the risk of bank runs and bank failures. It was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis and builds upon the standards of Basel II, introduced in 2004, and Basel I, introduced in 1988.\n\n---\n\n**Basel Accords**\nThe Basel Accords refer to the banking supervision accords issued by the Basel Committee on Banking Supervision (BCBS).\n\n---\n\n**Basel III: Finalising post-crisis reforms**\nBasel III: Finalising post-crisis reforms, sometimes called the Basel III Endgame in the United States, Basel 3.1 in the United Kingdom, or Capital Requirements Regulations III (CRR III) in the European Union, are additional changes to international standards for bank capital requirements that were agreed by the Basel Committee on Banking Supervision (BCBS) on 7 December 2017 as part of Basel III, first published in 2010. They have also been referred to as Basel IV; however, the secretary general of Basel Committee said in a 2016 speech he did not view the changes as substantial enough to describe them in such a way.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Basel_III",
+          "https://en.wikipedia.org/wiki/Basel_Accords",
+          "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms"
+        ],
+        "error": null
+      },
+      "duration_seconds": 0.6176879405975342
+    },
+    {
+      "step": 2,
+      "thought": "The Wikipedia results provide an overview of the Basel III accord, but do not specify the exact capital requirements for banks. To find the specific requirements, I should search for academic papers or reports that discuss the implementation of Basel III.",
+      "action": {
+        "tool": "arxiv",
+        "query": "Basel III capital requirements banks"
+      },
+      "observation": {
+        "tool_name": "arxiv",
+        "query": "Basel III capital requirements banks",
+        "results": [
+          {
+            "id": "2603.14557v1",
+            "title": "Tractable bank capital structure: optimal control under Basel III constraints",
+            "abstract": "Banks must optimize risky investments, dividend payouts, and capital structure under tight Basel III solvency and liquidity constraints, while costly equity issuance serves as a distress-recovery tool. We formulate this as a stochastic control problem that reduces the high-dimensional balance-sheet dynamics to a tractable one-dimensional process in the leverage ratio, with state-dependent investment limits. The resulting policy is simple and interpretable: pay dividends at an upper reflection barrier and, when needed, recapitalize only at the distress boundary, jumping to a unique target level. We characterize these thresholds analytically and show their sensitivity to regulatory parameters. From a regulatory viewpoint, we solve an outer optimization problem that maps the efficient frontier between shareholder value and survival probability (via Monte Carlo), with and without leverage caps. Results highlight that tightening solvency requirements often yields the best safety-profitability trade-off.",
+            "published": "2026-03-15T19:08:39Z",
+            "authors": [
+              "Erhan Bayraktar",
+              "Etienne Chevalier",
+              "Vathana Ly Vath",
+              "Yuqiong Wang"
+            ],
+            "url": "https://arxiv.org/abs/2603.14557v1"
+          },
+          {
+            "id": "1211.5517v1",
+            "title": "CDS pricing under Basel III: capital relief and default protection",
+            "abstract": "Basel III introduces new capital charges for CVA. These charges, and the Basel 2.5 default capital charge can be mitigated by CDS. Therefore, to price in the capital relief that CDS contracts provide, we introduce a CDS pricing model with three legs: premium; default protection; and capital relief. If markets are complete, with no CDS bond basis, then CDSs can be replicated by taking short positions in risky floating bonds issued by the reference entity and a riskless bank account. If these conditions do not hold, then it is theoretically possible that the capital relief that CDSs provide may be priced in. Thus our model provides bounds on the CDS-implied hazard rates when markets are incomplete. Under simple assumptions we show that 20% to over 50% of observed CDS spread could be due to priced in capital relief. Given that this is different for IMM and non-IMM banks will we see differential pricing?",
+            "published": "2012-11-23T14:40:12Z",
+            "authors": [
+              "Chris Kenyon",
+              "Andrew Green"
+            ],
+            "url": "https://arxiv.org/abs/1211.5517v1"
+          },
+          {
+            "id": "2303.11414v1",
+            "title": "Cost of Implementation of Basel III reforms in Bangladesh -- A Panel data analysis",
+            "abstract": "Inspired by the recent debate on the macroeconomic implications of the new bank regulatory standards known as Basel III, we tried to find out in this study that the impact of Basel III liquidity and capital requirements in Bangladesh proposed by Basel Committee on Banking Supervision (BCBS, 2010a). A small set of macro variables, using a sample of 22 private commercial banks operating in Bangladesh for the period of 2010-2014, are used to estimate long-run relationships among the variables. The macroeconomic variables are included The profitability of banks, GDP, banks' lending to private sector, Net Stable Funding Ratio, Tier 1 capital Ratio, Interest rate spread, real interest rate. The cost is quantified using Driscoll and Kraay panel data models with fixed effect. Impact of higher capital and liquidity requirement on Interest rate spread and lending to private sector of banks were considered as the cost to the economy as a whole whereas impact of higher capital and liquidity requirement on profitability of banks(ROE) was considered as the cost of banks. Here it is found that, the interest rate level is positively affected by the tighter liquidity and capital requirements which driven toward lessen of the private sector lending of banks. The return on equity of banks varies negatively with the liquidity and capital. The economic costs are considerably below the estimated positive benefit that the reform should have by reducing the probability of banking crises and the associated banking losses (BCBS, 2010b).",
+            "published": "2023-03-11T05:05:57Z",
+            "authors": [
+              "Dipti Rani Hazra",
+              "Md. Shah Naoaj",
+              "Mohammed Mahinur Alam",
+              "Abdul Kader"
+            ],
+            "url": "https://arxiv.org/abs/2303.11414v1"
+          },
+          {
+            "id": "1602.03505v1",
+            "title": "Basel III capital surcharges for G-SIBs fail to control systemic risk and can cause pro-cyclical side effects",
+            "abstract": "In addition to constraining bilateral exposures of financial institutions, there are essentially two options for future financial regulation of systemic risk (SR): First, financial regulation could attempt to reduce the financial fragility of global or domestic systemically important financial institutions (G-SIBs or D-SIBs), as for instance proposed in Basel III. Second, future financial regulation could attempt strengthening the financial system as a whole. This can be achieved by re-shaping the topology of financial networks. We use an agent-based model (ABM) of a financial system and the real economy to study and compare the consequences of these two options. By conducting three \"computer experiments\" with the ABM we find that re-shaping financial networks is more effective and efficient than reducing leverage. Capital surcharges for G-SIBs can reduce SR, but must be larger than those specified in Basel III in order to have a measurable impact. This can cause a loss of efficiency. Basel III capital surcharges for G-SIBs can have pro-cyclical side effects.",
+            "published": "2016-02-10T20:29:15Z",
+            "authors": [
+              "Sebastian Poledna",
+              "Olaf Bochmann",
+              "Stefan Thurner"
+            ],
+            "url": "https://arxiv.org/abs/1602.03505v1"
+          },
+          {
+            "id": "1412.0064v2",
+            "title": "Assessing the Basel II Internal Ratings-Based Approach: Empirical Evidence from Australia",
+            "abstract": "The Basel II internal ratings-based (IRB) approach to capital adequacy for credit risk implements an asymptotic single risk factor (ASRF) model. Measurements from the ASRF model of the prevailing state of Australia's economy and the level of capitalisation of its banking sector find general agreement with macroeconomic indicators, financial statistics and external credit ratings. However, given the range of economic conditions, from mild contraction to moderate expansion, experienced in Australia since the implementation of Basel II, we cannot attest to the validity of the model specification of the IRB approach for its intended purpose of solvency assessment. With the implementation of Basel II preceding the time when the effect of the financial crisis of 2007-09 was most acutely felt, our empirical findings offer a fundamental assessment of the impact of the crisis on the Australian banking sector. Access to internal bank data collected by the prudential regulator distinguishes our research from other empirical studies on the IRB approach and recent crisis.",
+            "published": "2014-11-29T03:16:00Z",
+            "authors": [
+              "Silvio Tarca",
+              "Marek Rutkowski"
+            ],
+            "url": "https://arxiv.org/abs/1412.0064v2"
+          }
+        ],
+        "summary": "**Tractable bank capital structure: optimal control under Basel III constraints** (2026)\nAuthors: Erhan Bayraktar, Etienne Chevalier, Vathana Ly Vath et al.\narXiv ID: 2603.14557v1\nAbstract: Banks must optimize risky investments, dividend payouts, and capital structure under tight Basel III solvency and liquidity constraints, while costly equity issuance serves as a distress-recovery tool. We formulate this as a stochastic control problem that reduces the high-dimensional balance-sheet dynamics to a tractable one-dimensional process in the leverage ratio, with state-dependent investme...\nURL: https://arxiv.org/abs/2603.14557v1\n\n---\n\n**CDS pricing under Basel III: capital relief and default protection** (2012)\nAuthors: Chris Kenyon, Andrew Green\narXiv ID: 1211.5517v1\nAbstract: Basel III introduces new capital charges for CVA. These charges, and the Basel 2.5 default capital charge can be mitigated by CDS. Therefore, to price in the capital relief that CDS contracts provide, we introduce a CDS pricing model with three legs: premium; default protection; and capital relief. If markets are complete, with no CDS bond basis, then CDSs can be replicated by taking short positio...\nURL: https://arxiv.org/abs/1211.5517v1\n\n---\n\n**Cost of Implementation of Basel III reforms in Bangladesh -- A Panel data analysis** (2023)\nAuthors: Dipti Rani Hazra, Md. Shah Naoaj, Mohammed Mahinur Alam et al.\narXiv ID: 2303.11414v1\nAbstract: Inspired by the recent debate on the macroeconomic implications of the new bank regulatory standards known as Basel III, we tried to find out in this study that the impact of Basel III liquidity and capital requirements in Bangladesh proposed by Basel Committee on Banking Supervision (BCBS, 2010a). A small set of macro variables, using a sample of 22 private commercial banks operating in Banglades...\nURL: https://arxiv.org/abs/2303.11414v1\n\n---\n\n**Basel III capital surcharges for G-SIBs fail to control systemic risk and can cause pro-cyclical side effects** (2016)\nAuthors: Sebastian Poledna, Olaf Bochmann, Stefan Thurner\narXiv ID: 1602.03505v1\nAbstract: In addition to constraining bilateral exposures of financial institutions, there are essentially two options for future financial regulation of systemic risk (SR): First, financial regulation could attempt to reduce the financial fragility of global or domestic systemically important financial institutions (G-SIBs or D-SIBs), as for instance proposed in Basel III. Second, future financial regulati...\nURL: https://arxiv.org/abs/1602.03505v1\n\n---\n\n**Assessing the Basel II Internal Ratings-Based Approach: Empirical Evidence from Australia** (2014)\nAuthors: Silvio Tarca, Marek Rutkowski\narXiv ID: 1412.0064v2\nAbstract: The Basel II internal ratings-based (IRB) approach to capital adequacy for credit risk implements an asymptotic single risk factor (ASRF) model. Measurements from the ASRF model of the prevailing state of Australia's economy and the level of capitalisation of its banking sector find general agreement with macroeconomic indicators, financial statistics and external credit ratings. However, given th...\nURL: https://arxiv.org/abs/1412.0064v2",
+        "source_urls": [
+          "https://arxiv.org/abs/2603.14557v1",
+          "https://arxiv.org/abs/1211.5517v1",
+          "https://arxiv.org/abs/2303.11414v1",
+          "https://arxiv.org/abs/1602.03505v1",
+          "https://arxiv.org/abs/1412.0064v2"
+        ],
+        "error": null
+      },
+      "duration_seconds": 0.5944418907165527
+    },
+    {
+      "step": 3,
+      "thought": "The retrieved information provides an overview of the Basel III accord and its goals, but does not specify the exact capital requirements for banks. The arXiv results discuss various aspects of Basel III, including its implementation, capital surcharges, and systemic risk, but also do not provide a clear answer to the question.",
+      "action": null,
+      "observation": null,
+      "duration_seconds": 1.7073490619659424
+    }
+  ],
+  "final_answer": "**[RETRIEVED \u2014 from tool results]**\nBasel III is a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage [Source: https://en.wikipedia.org/wiki/Basel_III]. The Basel III accord was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis [Source: https://en.wikipedia.org/wiki/Basel_III].\n\n**[REASONING \u2014 model analysis/inference]**\nModel reasoning suggests that the exact capital requirements for banks under Basel III are not explicitly stated in the retrieved information. However, it can be inferred that Basel III introduces new capital charges for banks, including a leverage ratio and risk-based capital requirements [REASONING].",
+  "citations": [
+    "https://en.wikipedia.org/wiki/Basel_III",
+    "https://arxiv.org/abs/2603.14557v1",
+    "https://arxiv.org/abs/1211.5517v1",
+    "https://arxiv.org/abs/2303.11414v1",
+    "https://arxiv.org/abs/1602.03505v1",
+    "https://arxiv.org/abs/1412.0064v2",
+    "https://en.wikipedia.org/wiki/Basel_Accords",
+    "https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms"
+  ],
+  "total_steps": 3,
+  "total_duration_seconds": 4.7961390018463135,
+  "error": null
+}

@@ -1,2 +1,254 @@
-# research-agent
-banking research agent
+# Banking Research Agent
+
+A multi-tool research agent for banking analysts that autonomously searches Wikipedia, arXiv, and FRED to answer financial research questions with citations.
+
+
+---
+
+## Architecture Overview
+
+### Orchestration: ReAct (Reasoning + Acting)
+
+The agent uses the **ReAct** pattern — an interleaved loop of reasoning steps and tool calls:
+
+```
+Question
+   │
+   ▼
+Classifier (LLM call)
+   ├── out_of_scope → Refusal message
+   └── in_scope
+        │
+        ▼
+   ReAct Loop (up to 8 steps)
+   ┌──────────────────────────────┐
+   │  Thought  (LLM reasoning)    │
+   │  Action   (tool + query)     │
+   │  Observation (tool result)   │
+   └──────────┬───────────────────┘
+              │ repeat
+              ▼
+        Final Answer
+        (retrieved facts + model reasoning, clearly separated)
+              │
+              ▼
+        Trace saved to traces/{run_id}.json
+```
+
+**Why ReAct over alternatives:**
+
+- **vs. plan-and-execute**: ReAct adapts mid-run. If a Wikipedia search for "Basel III" returns a high-level overview but not capital ratios specifically, the agent can immediately follow up on the gap. Plan-and-execute locks in the search plan upfront and can't course-correct.
+- **vs. single-shot prompting**: Multi-step questions (e.g. comparing 2008 vs COVID monetary policy, or combining FRED data with academic context) require information from multiple tool calls to answer well. Single-shot doesn't retrieve anything.
+- **vs. custom FSM**: ReAct is simpler to implement and inspect, and sufficient for this scope. A FSM would add value for highly structured workflows (e.g. always fetch FRED data first, then Wikipedia context) but introduces rigidity without a clear benefit here.
+
+### Upfront Classifier
+
+Before the ReAct loop begins, a lightweight LLM call classifies the question:
+
+- **scope**: `in_scope` or `out_of_scope` — out-of-scope questions are refused immediately without any tool calls
+- **domain**: `factual`, `academic`, `data`, `multi_source`, or `speculative` — passed to the ReAct loop as a hint to bias tool selection
+
+### Answer Format
+
+Every final answer explicitly separates what came from tools versus what the model inferred:
+
+```
+**[RETRIEVED — from tool results]**
+<facts drawn directly from tool outputs, with inline [Source: url] citations>
+
+**[REASONING — model analysis/inference]**
+<synthesis, comparison, or inference the model added>
+```
+
+This distinction is enforced at the prompt level — the LLM is required to populate separate `retrieved` and `reasoning` fields in its JSON response.
+
+### Observability
+
+Every run produces a structured JSON trace in `traces/{run_id}.json` containing:
+- Classifier result (scope, domain)
+- Each step: thought, action (tool + query), full tool observation
+- Final answer and citations
+- Per-step and total duration
+
+An index of all runs is appended to `traces/index.jsonl` for easy querying.
+
+---
+
+## Key Design Decisions
+
+### LLM: Groq (llama-3.3-70b-versatile)
+
+**Choice**: Groq's free tier running `llama-3.3-70b-versatile`.
+
+**Why Groq over a local model:**
+- No GPU required — reviewers can run the agent on any machine without installing Ollama or downloading multi-GB weights
+- `llama-3.3-70b-versatile` has strong instruction-following and JSON output reliability, which matters for the ReAct loop's structured response format
+- Groq's inference is fast enough that multi-step runs complete in seconds rather than minutes
+
+**Tradeoffs vs. a local model (e.g. Ollama + Llama 3.2-3B):**
+
+| | Groq (free tier) | Local (Ollama) |
+|---|---|---|
+| Setup | API key only | Requires Ollama + model download (~2-8 GB) |
+| Reproducibility | Requires internet + free account | Fully offline after setup |
+| Reasoning quality | Strong (70B parameters) | Weaker at small sizes; 7B+ needed for reliable JSON |
+| Rate limits | Yes (~30 RPM on free tier) | None |
+| Cost | Free up to limits | Free, but compute-heavy on CPU |
+
+**Tradeoffs vs. a paid API (e.g. GPT-4, Claude):**
+Paid APIs offer higher rate limits and stronger reasoning, but violate the "no paid API keys" constraint. Groq free tier is the best available option that a reviewer can reproduce without spending money.
+
+**Rate limiting**: The Groq client uses exponential backoff (up to 5 retries, base delay 2s) to handle 429s gracefully.
+
+### Tool Interface
+
+All tools implement a consistent `BaseTool` interface:
+
+```python
+class BaseTool(ABC):
+    name: str         # identifier used by the LLM to invoke the tool
+    description: str  # shown to the LLM in the system prompt
+
+    def run(self, query: str) -> ToolResult: ...
+```
+
+```python
+@dataclass
+class ToolResult:
+    tool_name: str
+    query: str
+    results: list[dict]   # raw structured data (stored in trace)
+    summary: str          # compact text injected into LLM context
+    source_urls: list[str]
+    error: str | None
+```
+
+The separation between `results` (raw) and `summary` (LLM-ready) is intentional: raw data is preserved in the trace for citation accuracy, while the summary is a compact rendering that keeps the LLM context window manageable.
+
+### Tool: Wikipedia
+
+- **API**: MediaWiki REST API + Action API (no key required)
+- **What it provides**: Article search, summaries, URLs
+- **Best for**: Factual background, regulatory definitions, historical context (discount window, Basel III, Dodd-Frank, quantitative easing)
+- **Implementation**: Searches for up to 3 article titles, fetches each summary via the REST `/page/summary/{title}` endpoint, returns them concatenated
+
+### Tool: arXiv
+
+- **API**: arXiv Atom feed API (no key required)
+- **What it provides**: Paper titles, abstracts, authors, publication dates, arXiv IDs and URLs
+- **Best for**: Recent academic research on ML in finance, systemic risk, credit modeling, stress testing
+- **Implementation**: Queries `export.arxiv.org/api/query` sorted by relevance, parses Atom XML, returns up to 5 papers with formatted metadata
+
+### Tool: FRED (Federal Reserve Economic Data)
+
+- **API**: FRED REST API (free key, instant signup at [fredaccount.stlouisfed.org](https://fredaccount.stlouisfed.org))
+- **What it provides**: US economic time series — unemployment, GDP, federal funds rate, inflation
+- **Best for**: Data retrieval questions requiring current or historical figures
+- **Graceful degradation**: If `FRED_API_KEY` is not set, the tool is registered but disabled — FRED questions fall back to Wikipedia rather than crashing
+- **Implementation**: Searches FRED for the most relevant series by popularity, fetches the last 13 observations (~1 year for monthly series), returns values with dates and units
+
+### Adding a New Tool
+
+Adding a fourth tool is a three-step plug-in operation:
+1. Create `tools/your_tool.py` implementing `BaseTool`
+2. Register it in `core/tool_registry.py` → `build_default_registry()`
+3. The tool description is automatically included in the agent's system prompt — no other changes needed
+
+---
+
+## Setup & Run Instructions
+
+### Requirements
+
+- Python 3.9 or higher
+- A free [Groq API key](https://console.groq.com) (no credit card required)
+- Optional: A free [FRED API key](https://fredaccount.stlouisfed.org/login/secure/) for economic data questions
+
+### Install
+
+```bash
+# Clone the repo
+git clone https://github.com/sydneywehn/research-agent.git
+cd research-agent
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Configure
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and fill in your keys:
+
+```
+GROQ_API_KEY=gsk_...        # required
+FRED_API_KEY=...            # optional — enables economic data questions
+```
+
+### Run a single question
+
+```bash
+python3 agent.py "What is the Federal Reserve's discount window and how does it work?"
+```
+
+Output is printed to stdout. A structured trace is saved to `traces/`.
+
+### Run the evaluation harness
+
+```bash
+# Run all 18 benchmark questions
+python3 evals/run_evals.py
+
+# Run specific questions by ID
+python3 evals/run_evals.py --ids q01 q07
+
+# Filter by category
+python3 evals/run_evals.py --category academic
+```
+
+Results are saved to `evals/results/eval_{timestamp}.json`.
+
+---
+
+## Agent Performance Summary
+
+The agent was evaluated against an 18-question benchmark spanning factual lookup, academic search, data retrieval, multi-source synthesis, out-of-scope detection, and speculative questions.
+
+**First full eval run: 14/18 (77%)**
+
+| Category | Score |
+|---|---|
+| Academic | 3/3 |
+| Data | 3/3 |
+| Out-of-scope | 2/2 |
+| Speculative | 1/1 |
+| Multi-source | 3/4 |
+| Factual | 2/5 |
+
+**What worked well:** Academic paper retrieval, FRED data questions, and out-of-scope detection all performed perfectly. Multi-source synthesis questions (e.g. comparing 2008 vs COVID monetary policy) produced well-cited answers using multiple tools in a single run.
+
+**Where it falls short:** Factual questions requiring specific sub-concepts (e.g. "primary credit rate" or "lender of last resort" within the discount window question) sometimes produced surface-level answers when the first Wikipedia result gave a high-level overview without drilling into specifics.
+
+---
+
+## Limitations
+
+
+- **Groq free tier rate limits**: Running the full 18-question eval suite sequentially triggers rate limiting (~30 RPM). In production this would be resolved with a paid API tier, request queuing, or a locally-hosted model.
+- **Wikipedia retrieval depth**: The agent sometimes stops at a high-level article summary without following up on specific sub-concepts mentioned in the question. Better query decomposition upfront would improve factual recall.
+- **arXiv query relevance**: Broad queries sometimes return tangentially related papers. More specific financial terminology in the query (e.g. "credit risk neural network 2024" vs "machine learning credit") improves results significantly.
+- **No document store**: The agent only searches live APIs — it has no ability to search internal documents or PDFs, which limits its usefulness for a real banking startup's internal research.
+- **Single-turn only**: The agent does not support follow-up questions or conversational context across runs.
+---
+
+## What I'd Do Differently With More Time
+
+- **Better query planning**: Before entering the ReAct loop, decompose the question into explicit sub-questions and map each to the most appropriate tool. This would reduce the number of steps needed and improve factual recall without increasing LLM calls.
+- **SQLite trace store**: Replace JSON trace files with a SQLite database for queryable run history — enabling analysis like "which questions used the most steps" or "which tool was called most often."
+- **Local model fallback**: Add Ollama support as a fallback when Groq is rate-limited, with automatic switching. This would make the agent more resilient for batch eval runs.
+- **Smarter Wikipedia retrieval**: Follow Wikipedia internal links when the first article summary is too high-level — similar to how a human researcher would click through to related articles.
+- **Streaming output**: Print the agent's thoughts in real time rather than waiting for the full answer, which would make the tool much more usable interactively.
+- **Internal document support**: Add a vector store tool (e.g. ChromaDB) so the agent can search internal PDFs and documents alongside public APIs.

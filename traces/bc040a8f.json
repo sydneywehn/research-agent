@@ -1,0 +1,216 @@
+{
+  "run_id": "bc040a8f",
+  "question": "How did the Federal Reserve's monetary policy response to the 2008 financial crisis differ from its response to COVID-19?",
+  "timestamp": "2026-04-16T16:04:44.915771+00:00",
+  "classifier": {
+    "scope": "in_scope",
+    "reason": "The question pertains to monetary policy and central banks, which are core topics in financial and economic research.",
+    "domain": "academic"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "thought": "To understand the differences in the Federal Reserve's monetary policy responses, we first need to identify the key actions taken during the 2008 financial crisis.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Federal Reserve response 2008 financial crisis"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Federal Reserve response 2008 financial crisis",
+        "results": [
+          {
+            "title": "Federal Reserve responses to the subprime crisis",
+            "extract": "The U.S. central banking system, the Federal Reserve, in partnership with central banks around the world, took several steps to address the subprime mortgage crisis. Federal Reserve Chairman Ben Bernanke stated in early 2008: \"Broadly, the Federal Reserve\u2019s response has followed two tracks: efforts to support market liquidity and functioning and the pursuit of our macroeconomic objectives through monetary policy.\" A 2011 study by the Government Accountability Office found that \"on numerous occasions in 2008 and 2009, the Federal Reserve Board invoked emergency authority under the Federal Reserve Act of 1913 to authorize new broad-based programs and financial assistance to individual institutions to stabilize financial markets. Loans outstanding for the emergency programs peaked at more than $1 trillion in late 2008.\"",
+            "url": "https://en.wikipedia.org/wiki/Federal_Reserve_responses_to_the_subprime_crisis"
+          },
+          {
+            "title": "Global financial crisis in October 2008",
+            "extract": "",
+            "url": "https://en.wikipedia.org/wiki/Global_financial_crisis_in_October_2008"
+          },
+          {
+            "title": "2008 financial crisis",
+            "extract": "A major worldwide financial crisis centered in the United States took place in 2008. The causes included excessive speculation on property values by both homeowners and financial institutions, leading to the 2000s United States housing bubble. This was exacerbated by predatory lending for subprime mortgages and by deficiencies in regulation. Cash out refinancings had fueled an increase in consumption that could no longer be sustained when home prices declined. The first phase of the crisis was the subprime mortgage crisis, which began in early 2007, as mortgage-backed securities (MBS) tied to U.S. real estate, and a vast web of derivatives linked to those MBS, collapsed in value. A liquidity crisis spread to global institutions by mid-2007 and climaxed with the bankruptcy of Lehman Brothers in September 2008, which triggered a stock market crash and bank runs in several countries. The crisis exacerbated the Great Recession, a global recession that began in late-2007, as well as the United States bear market of 2007\u20132009. It was also a contributor to the 2008\u20132011 Icelandic financial crisis and the euro area crisis.",
+            "url": "https://en.wikipedia.org/wiki/2008_financial_crisis"
+          }
+        ],
+        "summary": "**Federal Reserve responses to the subprime crisis**\nThe U.S. central banking system, the Federal Reserve, in partnership with central banks around the world, took several steps to address the subprime mortgage crisis. Federal Reserve Chairman Ben Bernanke stated in early 2008: \"Broadly, the Federal Reserve\u2019s response has followed two tracks: efforts to support market liquidity and functioning and the pursuit of our macroeconomic objectives through monetary policy.\" A 2011 study by the Government Accountability Office found that \"on numerous occasions in 2008 and 2009, the Federal Reserve Board invoked emergency authority under the Federal Reserve Act of 1913 to authorize new broad-based programs and financial assistance to individual institutions to stabilize financial markets. Loans outstanding for the emergency programs peaked at more than $1 trillion in late 2008.\"\n\n---\n\n**Global financial crisis in October 2008**\n\n\n---\n\n**2008 financial crisis**\nA major worldwide financial crisis centered in the United States took place in 2008. The causes included excessive speculation on property values by both homeowners and financial institutions, leading to the 2000s United States housing bubble. This was exacerbated by predatory lending for subprime mortgages and by deficiencies in regulation. Cash out refinancings had fueled an increase in consumption that could no longer be sustained when home prices declined. The first phase of the crisis was the subprime mortgage crisis, which began in early 2007, as mortgage-backed securities (MBS) tied to U.S. real estate, and a vast web of derivatives linked to those MBS, collapsed in value. A liquidity crisis spread to global institutions by mid-2007 and climaxed with the bankruptcy of Lehman Brothers in September 2008, which triggered a stock market crash and bank runs in several countries. The crisis exacerbated the Great Recession, a global recession that began in late-2007, as well as the United States bear market of 2007\u20132009. It was also a contributor to the 2008\u20132011 Icelandic financial crisis and the euro area crisis.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Federal_Reserve_responses_to_the_subprime_crisis",
+          "https://en.wikipedia.org/wiki/Global_financial_crisis_in_October_2008",
+          "https://en.wikipedia.org/wiki/2008_financial_crisis"
+        ],
+        "error": null
+      },
+      "duration_seconds": 4.512308835983276
+    },
+    {
+      "step": 2,
+      "thought": "The Federal Reserve's response to the 2008 financial crisis involved invoking emergency authority to authorize new broad-based programs and financial assistance to stabilize financial markets, with loans outstanding peaking at over $1 trillion in late 2008 [Source: https://en.wikipedia.org/wiki/Federal_Reserve_response_to_the_subprime_crisis]. To compare this with the COVID-19 response, we need to identify the key actions taken by the Federal Reserve during the COVID-19 pandemic.",
+      "action": {
+        "tool": "wikipedia",
+        "query": "Federal Reserve response COVID-19 pandemic"
+      },
+      "observation": {
+        "tool_name": "wikipedia",
+        "query": "Federal Reserve response COVID-19 pandemic",
+        "results": [
+          {
+            "title": "U.S. federal government response to the COVID-19 pandemic",
+            "extract": "The federal government of the United States initially responded to the COVID-19 pandemic in the country with various declarations of emergency, some of which led to travel and entry restrictions and the formation of the White House Coronavirus Task Force. As the pandemic progressed in the U.S. and globally, the U.S. government began issuing recommendations regarding the response by state and local governments, as well as social distancing measures and workplace hazard controls. State governments played a primary role in adopting policies to address the pandemic. Following the closure of most businesses throughout a number of U.S. states, President Donald Trump announced the mobilization of the National Guard in the most affected areas.",
+            "url": "https://en.wikipedia.org/wiki/U.S._federal_government_response_to_the_COVID-19_pandemic"
+          },
+          {
+            "title": "German government response to the COVID-19 pandemic",
+            "extract": "The government of Germany initially responded to the COVID-19 pandemic in the country with preventive measures to curb the spread of the coronavirus disease 2019 in the country. With the nationwide spread of the disease from March 2020, preventive measures were replaced by containment measures, including a lockdown from March. On 25\u00a0March, the Bundestag made the determination of an epidemic situation of national significance. This created a legal framework for the government of chancellor Angela Merkel and the heads of the 16 German states to agree on nationwide pandemic restrictions. Implementation of decisions by that panel remained a matter of individual states, however, leading to differences in anti-pandemic rules and regulations across states. The Bundesnotbremse in force from April to June 2021 sought to establish uniformity.",
+            "url": "https://en.wikipedia.org/wiki/German_government_response_to_the_COVID-19_pandemic"
+          },
+          {
+            "title": "Economic impact of the COVID-19 pandemic in the United States",
+            "extract": "The economic impact of the COVID-19 pandemic in the United States has been widely disruptive, adversely affecting travel, financial markets, employment, shipping, and other industries. The impacts can be attributed not just to government intervention to contain the virus, but also to consumer and business behavior to reduce exposure to and spread of the deadly virus.",
+            "url": "https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID-19_pandemic_in_the_United_States"
+          }
+        ],
+        "summary": "**U.S. federal government response to the COVID-19 pandemic**\nThe federal government of the United States initially responded to the COVID-19 pandemic in the country with various declarations of emergency, some of which led to travel and entry restrictions and the formation of the White House Coronavirus Task Force. As the pandemic progressed in the U.S. and globally, the U.S. government began issuing recommendations regarding the response by state and local governments, as well as social distancing measures and workplace hazard controls. State governments played a primary role in adopting policies to address the pandemic. Following the closure of most businesses throughout a number of U.S. states, President Donald Trump announced the mobilization of the National Guard in the most affected areas.\n\n---\n\n**German government response to the COVID-19 pandemic**\nThe government of Germany initially responded to the COVID-19 pandemic in the country with preventive measures to curb the spread of the coronavirus disease 2019 in the country. With the nationwide spread of the disease from March 2020, preventive measures were replaced by containment measures, including a lockdown from March. On 25\u00a0March, the Bundestag made the determination of an epidemic situation of national significance. This created a legal framework for the government of chancellor Angela Merkel and the heads of the 16 German states to agree on nationwide pandemic restrictions. Implementation of decisions by that panel remained a matter of individual states, however, leading to differences in anti-pandemic rules and regulations across states. The Bundesnotbremse in force from April to June 2021 sought to establish uniformity.\n\n---\n\n**Economic impact of the COVID-19 pandemic in the United States**\nThe economic impact of the COVID-19 pandemic in the United States has been widely disruptive, adversely affecting travel, financial markets, employment, shipping, and other industries. The impacts can be attributed not just to government intervention to contain the virus, but also to consumer and business behavior to reduce exposure to and spread of the deadly virus.",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/U.S._federal_government_response_to_the_COVID-19_pandemic",
+          "https://en.wikipedia.org/wiki/German_government_response_to_the_COVID-19_pandemic",
+          "https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID-19_pandemic_in_the_United_States"
+        ],
+        "error": null
+      },
+      "duration_seconds": 6.8958868980407715
+    },
+    {
+      "step": 3,
+      "thought": "The Federal Reserve's responses to the 2008 financial crisis and the COVID-19 pandemic involved different monetary policy actions. To understand these differences, we need to identify the key actions taken during both crises.",
+      "action": {
+        "tool": "fred",
+        "query": "Federal Reserve monetary policy actions 2008 vs 2020"
+      },
+      "observation": {
+        "tool_name": "fred",
+        "query": "Federal Reserve monetary policy actions 2008 vs 2020",
+        "results": [],
+        "summary": "No FRED series found for: Federal Reserve monetary policy actions 2008 vs 2020",
+        "source_urls": [],
+        "error": null
+      },
+      "duration_seconds": 7.660301208496094
+    },
+    {
+      "step": 4,
+      "thought": "The Federal Reserve's responses to the 2008 financial crisis and the COVID-19 pandemic involved different monetary policy actions. To understand these differences, we need to identify the key actions taken during both crises.",
+      "action": {
+        "tool": "arxiv",
+        "query": "Federal Reserve monetary policy response 2008 financial crisis COVID-19 pandemic comparison"
+      },
+      "observation": {
+        "tool_name": "arxiv",
+        "query": "Federal Reserve monetary policy response 2008 financial crisis COVID-19 pandemic comparison",
+        "results": [
+          {
+            "id": "2305.12318v1",
+            "title": "The Federal Reserve's Response to the Global Financial Crisis and Its Long-Term Impact: An Interrupted Time-Series Natural Experimental Analysis",
+            "abstract": "This paper examines the monetary policies the Federal Reserve implemented in response to the Global Financial Crisis. More specifically, it analyzes the Federal Reserve's quantitative easing (QE) programs, liquidity facilities, and forward guidance operations conducted from 2007 to 2018. The essay's detailed examination of these policies culminates in an interrupted time-series (ITS) analysis of the long-term causal effects of the QE programs on U.S. inflation and real GDP. The results of this formal design-based natural experimental approach show that the QE operations positively affected U.S. real GDP but did not significantly impact U.S. inflation. Specifically, it is found that, for the 2011Q2-2018Q4 post-QE period, real GDP per capita in the U.S. increased by an average of 231 dollars per quarter relative to how it would have changed had the QE programs not been conducted. Moreover, the results show that, in 2018Q4, ten years after the beginning of the QE programs, real GDP per capita in the U.S. was 14% higher relative to what it would have been during that quarter had there not been the QE programs. These findings contradict Williamson's (2017) informal natural experimental evidence and confirm the conclusions of VARs and new Keynesian DSGE models that the Federal Reserve's QE policies positively affected U.S. real GDP. The results suggest that the current U.S. and worldwide high inflation rates are likely not because of the QE programs implemented in response to the financial crisis that accompanied the COVID-19 pandemic. They are likely due to the unprecedentedly large fiscal stimulus packages used, the peculiar nature of the financial downturn itself, the negative supply shocks from the war in Ukraine, or a combination of these factors. This paper is the first study to measure the macroeconomic effects of QE using a design-based natural experimental approach.",
+            "published": "2023-05-21T02:09:12Z",
+            "authors": [
+              "Arnaud Cedric Kamkoum"
+            ],
+            "url": "https://arxiv.org/abs/2305.12318v1"
+          },
+          {
+            "id": "2007.15419v1",
+            "title": "Measuring the Effectiveness of US Monetary Policy during the COVID-19 Recession",
+            "abstract": "The COVID-19 recession that started in March 2020 led to an unprecedented decline in economic activity across the globe. To fight this recession, policy makers in central banks engaged in expansionary monetary policy. This paper asks whether the measures adopted by the US Federal Reserve (Fed) have been effective in boosting real activity and calming financial markets. To measure these effects at high frequencies, we propose a novel mixed frequency vector autoregressive (MF-VAR) model. This model allows us to combine weekly and monthly information within an unified framework. Our model combines a set of macroeconomic aggregates such as industrial production, unemployment rates and inflation with high frequency information from financial markets such as stock prices, interest rate spreads and weekly information on the Feds balance sheet size. The latter set of high frequency time series is used to dynamically interpolate the monthly time series to obtain weekly macroeconomic measures. We use this setup to simulate counterfactuals in absence of monetary stimulus. The results show that the monetary expansion caused higher output growth and stock market returns, more favorable long-term financing conditions and a depreciation of the US dollar compared to a no-policy benchmark scenario.",
+            "published": "2020-07-30T12:28:14Z",
+            "authors": [
+              "Martin Feldkircher",
+              "Florian Huber",
+              "Michael Pfarrhofer"
+            ],
+            "url": "https://arxiv.org/abs/2007.15419v1"
+          },
+          {
+            "id": "2508.04830v1",
+            "title": "Federal Reserve Communication and the COVID-19 Pandemic",
+            "abstract": "In this study, we examine the Federal Reserve's communication strategies during the COVID-19 pandemic, comparing them with communication during previous periods of economic stress. Using specialized dictionaries tailored to COVID-19, unconventional monetary policy (UMP), and financial stability, combined with sentiment analysis and topic modeling techniques, we identify a distinct focus in Fed communication during the pandemic on financial stability, market volatility, social welfare, and UMP, characterized by notable contextual uncertainty. Through comparative analysis, we juxtapose the Fed's communication during the COVID-19 crisis with its responses during the dot-com and global financial crises, examining content, sentiment, and timing dimensions. Our findings reveal that Fed communication and policy actions were more reactive to the COVID-19 crisis than to previous crises. Additionally, declining sentiment related to financial stability in interest rate announcements and minutes anticipated subsequent accommodative monetary policy decisions. We further document that communicating about UMP has become the \"new normal\" for the Fed's Federal Open Market Committee meeting minutes and Chairman's speeches since the Global Financial Crisis, reflecting an institutional adaptation in communication strategy following periods of economic distress. These findings contribute to our understanding of how central bank communication evolves during crises and how communication strategies adapt to exceptional economic circumstances.",
+            "published": "2025-08-06T19:17:24Z",
+            "authors": [
+              "Jonathan Benchimol",
+              "Sophia Kazinnik",
+              "Yossi Saadon"
+            ],
+            "url": "https://arxiv.org/abs/2508.04830v1"
+          },
+          {
+            "id": "2101.04620v2",
+            "title": "Quickest Detection and Forecast of Pandemic Outbreaks: Analysis of COVID-19 Waves",
+            "abstract": "The COVID-19 pandemic has, worldwide and up to December 2020, caused over 1.7 million deaths, and put the world's most advanced healthcare systems under heavy stress. In many countries, drastic restrictive measures adopted by political authorities, such as national lockdowns, have not prevented the outbreak of new pandemic's waves. In this article, we propose an integrated detection-estimation-forecasting framework that, using publicly available data, is designed to: (i) learn relevant features of the pandemic (e.g., the infection rate); (ii) detect as quickly as possible the onset (or the termination) of an exponential growth of the contagion; and (iii) reliably forecast the pandemic evolution. The proposed solution is validated by analyzing the COVID-19 second and third waves in the USA.",
+            "published": "2021-01-12T17:22:09Z",
+            "authors": [
+              "Giovanni Soldi",
+              "Nicola Forti",
+              "Domenico Gaglione",
+              "Paolo Braca",
+              "Leonardo M. Millefiori",
+              "Stefano Marano",
+              "Peter Willett",
+              "Krishna Pattipati"
+            ],
+            "url": "https://arxiv.org/abs/2101.04620v2"
+          },
+          {
+            "id": "2007.08223v1",
+            "title": "An Efficient Mixture of Deep and Machine Learning Models for COVID-19 and Tuberculosis Detection Using X-Ray Images in Resource Limited Settings",
+            "abstract": "Clinicians in the frontline need to assess quickly whether a patient with symptoms indeed has COVID-19 or not. The difficulty of this task is exacerbated in low resource settings that may not have access to biotechnology tests. Furthermore, Tuberculosis (TB) remains a major health problem in several low- and middle-income countries and its common symptoms include fever, cough and tiredness, similarly to COVID-19. In order to help in the detection of COVID-19, we propose the extraction of deep features (DF) from chest X-ray images, a technology available in most hospitals, and their subsequent classification using machine learning methods that do not require large computational resources. We compiled a five-class dataset of X-ray chest images including a balanced number of COVID-19, viral pneumonia, bacterial pneumonia, TB, and healthy cases. We compared the performance of pipelines combining 14 individual state-of-the-art pre-trained deep networks for DF extraction with traditional machine learning classifiers. A pipeline consisting of ResNet-50 for DF computation and ensemble of subspace discriminant classifier was the best performer in the classification of the five classes, achieving a detection accuracy of 91.6+ 2.6% (accuracy + 95% Confidence Interval). Furthermore, the same pipeline achieved accuracies of 98.6+1.4% and 99.9+0.5% in simpler three-class and two-class classification problems focused on distinguishing COVID-19, TB and healthy cases; and COVID-19 and healthy images, respectively. The pipeline was computationally efficient requiring just 0.19 second to extract DF per X-ray image and 2 minutes for training a traditional classifier with more than 2000 images on a CPU machine. The results suggest the potential benefits of using our pipeline in the detection of COVID-19, particularly in resource-limited settings and it can run with limited computational resources.",
+            "published": "2020-07-16T09:49:49Z",
+            "authors": [
+              "Ali H. Al-Timemy",
+              "Rami N. Khushaba",
+              "Zahraa M. Mosa",
+              "Javier Escudero"
+            ],
+            "url": "https://arxiv.org/abs/2007.08223v1"
+          }
+        ],
+        "summary": "**The Federal Reserve's Response to the Global Financial Crisis and Its Long-Term Impact: An Interrupted Time-Series Natural Experimental Analysis** (2023)\nAuthors: Arnaud Cedric Kamkoum\narXiv ID: 2305.12318v1\nAbstract: This paper examines the monetary policies the Federal Reserve implemented in response to the Global Financial Crisis. More specifically, it analyzes the Federal Reserve's quantitative easing (QE) programs, liquidity facilities, and forward guidance operations conducted from 2007 to 2018. The essay's detailed examination of these policies culminates in an interrupted time-series (ITS) analysis of t...\nURL: https://arxiv.org/abs/2305.12318v1\n\n---\n\n**Measuring the Effectiveness of US Monetary Policy during the COVID-19 Recession** (2020)\nAuthors: Martin Feldkircher, Florian Huber, Michael Pfarrhofer\narXiv ID: 2007.15419v1\nAbstract: The COVID-19 recession that started in March 2020 led to an unprecedented decline in economic activity across the globe. To fight this recession, policy makers in central banks engaged in expansionary monetary policy. This paper asks whether the measures adopted by the US Federal Reserve (Fed) have been effective in boosting real activity and calming financial markets. To measure these effects at ...\nURL: https://arxiv.org/abs/2007.15419v1\n\n---\n\n**Federal Reserve Communication and the COVID-19 Pandemic** (2025)\nAuthors: Jonathan Benchimol, Sophia Kazinnik, Yossi Saadon\narXiv ID: 2508.04830v1\nAbstract: In this study, we examine the Federal Reserve's communication strategies during the COVID-19 pandemic, comparing them with communication during previous periods of economic stress. Using specialized dictionaries tailored to COVID-19, unconventional monetary policy (UMP), and financial stability, combined with sentiment analysis and topic modeling techniques, we identify a distinct focus in Fed com...\nURL: https://arxiv.org/abs/2508.04830v1\n\n---\n\n**Quickest Detection and Forecast of Pandemic Outbreaks: Analysis of COVID-19 Waves** (2021)\nAuthors: Giovanni Soldi, Nicola Forti, Domenico Gaglione et al.\narXiv ID: 2101.04620v2\nAbstract: The COVID-19 pandemic has, worldwide and up to December 2020, caused over 1.7 million deaths, and put the world's most advanced healthcare systems under heavy stress. In many countries, drastic restrictive measures adopted by political authorities, such as national lockdowns, have not prevented the outbreak of new pandemic's waves. In this article, we propose an integrated detection-estimation-for...\nURL: https://arxiv.org/abs/2101.04620v2\n\n---\n\n**An Efficient Mixture of Deep and Machine Learning Models for COVID-19 and Tuberculosis Detection Using X-Ray Images in Resource Limited Settings** (2020)\nAuthors: Ali H. Al-Timemy, Rami N. Khushaba, Zahraa M. Mosa et al.\narXiv ID: 2007.08223v1\nAbstract: Clinicians in the frontline need to assess quickly whether a patient with symptoms indeed has COVID-19 or not. The difficulty of this task is exacerbated in low resource settings that may not have access to biotechnology tests. Furthermore, Tuberculosis (TB) remains a major health problem in several low- and middle-income countries and its common symptoms include fever, cough and tiredness, simila...\nURL: https://arxiv.org/abs/2007.08223v1",
+        "source_urls": [
+          "https://arxiv.org/abs/2305.12318v1",
+          "https://arxiv.org/abs/2007.15419v1",
+          "https://arxiv.org/abs/2508.04830v1",
+          "https://arxiv.org/abs/2101.04620v2",
+          "https://arxiv.org/abs/2007.08223v1"
+        ],
+        "error": null
+      },
+      "duration_seconds": 9.835655927658081
+    },
+    {
+      "step": 5,
+      "thought": "The Federal Reserve's responses to the 2008 financial crisis and the COVID-19 pandemic involved different monetary policy actions.",
+      "action": null,
+      "observation": null,
+      "duration_seconds": 13.566699028015137
+    }
+  ],
+  "final_answer": "**[RETRIEVED \u2014 from tool results]**\nThe Federal Reserve's response to the 2008 financial crisis involved invoking emergency authority to authorize new broad-based programs and financial assistance to stabilize financial markets, with loans outstanding peaking at over $1 trillion in late 2008 [Source: https://en.wikipedia.org/wiki/Federal_Reserve_response_to_the_subprime_crisis]. The Federal Reserve implemented quantitative easing (QE) programs, liquidity facilities, and forward guidance operations from 2007 to 2018 [Source: https://arxiv.org/abs/2305.12318v1]. During the COVID-19 pandemic, the Federal Reserve engaged in expansionary monetary policy, including measures to boost real activity and calm financial markets [Source: https://arxiv.org/abs/2007.15419v1].\n\n**[REASONING \u2014 model analysis/inference]**\nThe differences in the Federal Reserve's monetary policy responses to the 2008 financial crisis and the COVID-19 pandemic can be attributed to the distinct economic conditions and challenges posed by each crisis. The 2008 financial crisis required a more comprehensive and unconventional monetary policy response, including quantitative easing and emergency lending facilities, to stabilize the financial system. In contrast, the COVID-19 pandemic required a more targeted and flexible monetary policy response, including measures to support small businesses and households affected by the pandemic. [REASONING] The Federal Reserve's communication strategies during the COVID-19 pandemic also differed from those during previous periods of economic stress, with a distinct focus on unconventional monetary policy and financial stability [Source: https://arxiv.org/abs/2508.04830v1].",
+  "citations": [
+    "https://en.wikipedia.org/wiki/Federal_Reserve_response_to_the_subprime_crisis",
+    "https://arxiv.org/abs/2305.12318v1",
+    "https://arxiv.org/abs/2007.15419v1",
+    "https://arxiv.org/abs/2508.04830v1",
+    "https://en.wikipedia.org/wiki/Federal_Reserve_responses_to_the_subprime_crisis",
+    "https://en.wikipedia.org/wiki/Global_financial_crisis_in_October_2008",
+    "https://en.wikipedia.org/wiki/2008_financial_crisis",
+    "https://en.wikipedia.org/wiki/U.S._federal_government_response_to_the_COVID-19_pandemic",
+    "https://en.wikipedia.org/wiki/German_government_response_to_the_COVID-19_pandemic",
+    "https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID-19_pandemic_in_the_United_States",
+    "https://arxiv.org/abs/2101.04620v2",
+    "https://arxiv.org/abs/2007.08223v1"
+  ],
+  "total_steps": 5,
+  "total_duration_seconds": 46.58435106277466,
+  "error": null
+}

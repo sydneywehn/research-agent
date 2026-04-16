@@ -1,0 +1,16 @@
+{
+  "run_id": "82047a21",
+  "question": "What is the best restaurant in New York City?",
+  "timestamp": "2026-04-16T16:06:20.741338+00:00",
+  "classifier": {
+    "scope": "out_of_scope",
+    "reason": "The question is about restaurants, which is a non-financial topic.",
+    "domain": "factual"
+  },
+  "steps": [],
+  "final_answer": "This question is outside the scope of this financial research assistant.\n\nReason: The question is about restaurants, which is a non-financial topic.\n\nI can help with banking regulations, monetary policy, economic data, academic finance research, and related topics.",
+  "citations": [],
+  "total_steps": 0,
+  "total_duration_seconds": 5.001667737960815,
+  "error": null
+}

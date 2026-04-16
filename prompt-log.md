@@ -101,3 +101,111 @@ Switched LLM from Gemini to Groq (`llama-3.3-70b-versatile`). Updated core/llm.p
 
 ---
 
+## [2026-04-16 15:53:00] User
+
+Switch the LLM from Gemini to Groq. Update the LLM client, add GROQ_API_KEY to .env.example, and update .env accordingly.
+
+---
+
+## [2026-04-16 15:53:00] Assistant
+
+Already done — confirmed core/llm.py uses Groq SDK with llama-3.3-70b-versatile, requirements.txt has groq>=0.9.0, .env.example has GROQ_API_KEY. Only missing piece is the actual key value in .env.
+
+---
+
+## [2026-04-16 15:55:00] User
+
+The answer synthesis looks good but needs to explicitly distinguish between information retrieved from tools vs reasoning the model added. Update the final answer format to include a section or inline markers for this.
+
+---
+
+## [2026-04-16 15:56:00] Assistant
+
+Updated SYSTEM_PROMPT to require three structured JSON fields in final answers: `retrieved` (tool facts with inline [Source: url] citations), `reasoning` (model inference), and `final_answer` (combined with [RETRIEVED]/[REASONING] markers). Added `_format_final_answer()` helper that renders section headers when both fields present, falls back gracefully to final_answer alone. Updated step-limit fallback prompt to request same structure.
+
+---
+
+## [2026-04-16 16:00:00] User
+
+The answer is showing twice — once without formatting and once with the RETRIEVED/REASONING sections. Remove the first unformatted version, only show the formatted one.
+
+---
+
+## [2026-04-16 16:00:00] Assistant
+
+Removed `f"{final}\n\n"` preamble from `_format_final_answer`. When both `retrieved` and `reasoning` are present, only the two labeled sections are rendered. Fallback to `final_answer` alone is unchanged.
+
+---
+
+## [2026-04-16 16:05:00] User
+
+Fix the type hints in run_evals.py to be compatible with Python 3.9 — replace list[str] | None with Optional[List[str]] and import Optional and List from typing.
+
+---
+
+## [2026-04-16 16:05:00] Assistant
+
+Added `Optional, List` to typing imports in evals/run_evals.py. Updated `run_evals` signature: `list[str] | None` → `Optional[List[str]]`, `str | None` → `Optional[str]`.
+
+---
+
+## [2026-04-16 16:08:00] User
+
+Create a .gitignore with: .env, __pycache__/, *.pyc, *.pyo, .DS_Store, traces/, evals/results/
+
+---
+
+## [2026-04-16 16:08:00] Assistant
+
+Created .gitignore with all requested entries.
+
+---
+
+## [2026-04-16 16:12:00] User
+
+For factual questions, the agent is stopping too early without enough detail. Increase MAX_STEPS for factual domain questions, or prompt the agent to do a follow-up search when the first result only gives a high-level overview.
+
+---
+
+## [2026-04-16 16:13:00] Assistant
+
+Added DOMAIN_MAX_STEPS dict (factual/multi_source=10, academic/speculative=8, data=6). Added DOMAIN_RULES dict with per-domain instructions injected into SYSTEM_PROMPT via {domain_rule} slot. Factual rule explicitly forbids finalizing on a single overview and requires follow-up searches on named sub-concepts. ReAct loop now uses domain-aware step budget.
+
+---
+
+## [2026-04-16 16:18:00] User
+
+Hitting Groq rate limits due to increased MAX_STEPS. Revert DOMAIN_MAX_STEPS, improve query planning upfront by injecting sub-questions from the classifier for factual questions, and add a configurable 2s delay between LLM calls.
+
+---
+
+## [2026-04-16 16:19:00] Assistant
+
+Reverted DOMAIN_MAX_STEPS (MAX_STEPS=8 for all). Added LLM_CALL_DELAY=2.0 constant, wired into ResearchAgent as call_delay kwarg, applied between steps. Updated CLASSIFIER_PROMPT to emit sub_questions (2-4 items) for factual domain. Added {search_plan} slot to SYSTEM_PROMPT populated from sub_questions as numbered list. Factual DOMAIN_RULE updated to reference the plan.
+
+---
+
+## [2026-04-16 16:22:00] User
+
+Groq rate limiting is causing all evals to fail. Revert all recent agent changes — go back to the version that scored 77%.
+
+---
+
+## [2026-04-16 16:22:00] Assistant
+
+Rewrote core/agent.py back to the 77% state: MAX_STEPS=8, no DOMAIN_MAX_STEPS, no DOMAIN_RULES, no sub_questions, no search_plan slot, no call_delay. CLASSIFIER_PROMPT and SYSTEM_PROMPT restored to original shape.
+
+---
+
+## [2026-04-16 16:28:00] User
+
+Write Architecture Overview, Key Design Decisions, and Setup & Run Instructions sections in README. Include: ReAct pattern and rationale, Groq vs local model tradeoffs, three tool descriptions and interfaces, Python version, full install instructions. Leave placeholders for Performance Summary, Limitations, and What I'd Do Differently.
+
+---
+
+## [2026-04-16 16:29:00] Assistant
+
+Wrote README.md with Architecture Overview (ReAct diagram, classifier, answer format, observability), Key Design Decisions (Groq tradeoff table vs local/paid, BaseTool/ToolResult interface, all three tool descriptions, plug-in extensibility note), and Setup & Run Instructions (Python 3.9+, pip install, .env config, single-question and eval harness commands). Three placeholder sections left for user to complete.
+
+---
+
