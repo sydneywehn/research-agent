@@ -209,3 +209,15 @@ Wrote README.md with Architecture Overview (ReAct diagram, classifier, answer fo
 
 ---
 
+## [2026-04-16 16:35:00] User
+
+Look through traces/ and find two examples where the agent used 3+ steps. Show the question, step count, and final answer.
+
+---
+
+## [2026-04-16 16:36:00] Assistant
+
+Found two examples: bc040a8f (5 steps, 2008 vs COVID — Wikipedia×2 + FRED fail + arXiv pivot + synthesis) and 48e9c6e1 (4 steps, ML credit risk — 3 arXiv rephrases showing query self-correction and graceful failure). Summarized step-by-step reasoning and final answer excerpts for both. Recommended both for README multi-step section: first as success case, second as transparent failure/limitation example.
+
+---
+

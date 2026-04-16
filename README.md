@@ -234,6 +234,40 @@ The agent was evaluated against an 18-question benchmark spanning factual lookup
 
 ---
 
+## Multi-Step Reasoning Examples
+
+### Example 1: Multi-source synthesis (5 steps)
+**Question:** How did the Federal Reserve's monetary policy response to the 2008 financial crisis differ from its response to COVID-19?
+Full trace available at: `traces/bc040a8f.json`
+
+**Why multi-step helps:** This question requires information from multiple sources — Wikipedia for historical context, arXiv for academic analysis of QE programs, and FRED for economic data. A single-pass agent would only retrieve one source. Over 5 steps the agent searched Wikipedia, pivoted to arXiv for academic papers on QE, and cross-referenced COVID-19 monetary policy research before synthesizing.
+
+**Answer:**
+**[RETRIEVED — from tool results]**
+The Federal Reserve's response to the 2008 financial crisis involved invoking emergency authority to authorize new broad-based programs and financial assistance to stabilize financial markets, with loans outstanding peaking at over $1 trillion in late 2008 [Source: Wikipedia]. The Federal Reserve implemented quantitative easing (QE) programs, liquidity facilities, and forward guidance operations from 2007 to 2018 [Source: arXiv]. During the COVID-19 pandemic, the Federal Reserve engaged in expansionary monetary policy, including measures to boost real activity and calm financial markets [Source: arXiv].
+
+**[REASONING — model analysis/inference]**
+The 2008 crisis required a more comprehensive unconventional response to stabilize the financial system. The COVID-19 response was more targeted, focused on supporting small businesses and households rather than systemic financial stabilization.
+
+---
+
+### Example 2: Query self-correction (4 steps)
+**Question:** What recent academic research exists on using machine learning for credit risk assessment?
+Full trace available at: `traces/48e9c6e1.json`
+
+
+**Why multi-step helps:** The agent's first arXiv query returned off-topic results. Over 4 steps it rephrased the query three times, demonstrating self-correction based on intermediate results — a capability that single-pass prompting cannot replicate. The agent's reasoning section honestly acknowledged when retrieved results were not directly on-topic.
+
+**Answer:**
+**[RETRIEVED — from tool results]**
+The arXiv search results include papers such as 'Changing Data Sources in the Age of Machine Learning for Official Statistics' [Source: https://arxiv.org/abs/2306.04338v1], 'Active learning for data streams: a survey' [Source: https://arxiv.org/abs/2302.08893v4], and 'Physics-Inspired Interpretability Of Machine Learning Models' [Source: https://arxiv.org/abs/2304.02381v2].
+
+**[REASONING — model analysis/inference]**
+While the search results do not provide direct information on using machine learning for credit risk assessment, they highlight the growing importance of machine learning in various fields. The agent identified this gap and rephrased its query three times before synthesizing from the best available results — demonstrating honest acknowledgment of retrieval limitations rather than hallucinating citations.
+
+
+---
+
 ## Limitations
 
 
@@ -246,7 +280,7 @@ The agent was evaluated against an 18-question benchmark spanning factual lookup
 
 ## What I'd Do Differently With More Time
 
-- **Better query planning**: Before entering the ReAct loop, decompose the question into explicit sub-questions and map each to the most appropriate tool. This would reduce the number of steps needed and improve factual recall without increasing LLM calls.
+- **Better query planning**: Before entering the ReAct loop, decompose the question into explicit sub-questions and map each to the most appropriate tool. I implemented this but rolled it back after it increased LLM calls per question and triggered Groq free tier rate limits during eval runs. With a paid API tier or local model, this would be the highest-ROI improvement for factual question recall.
 - **SQLite trace store**: Replace JSON trace files with a SQLite database for queryable run history — enabling analysis like "which questions used the most steps" or "which tool was called most often."
 - **Local model fallback**: Add Ollama support as a fallback when Groq is rate-limited, with automatic switching. This would make the agent more resilient for batch eval runs.
 - **Smarter Wikipedia retrieval**: Follow Wikipedia internal links when the first article summary is too high-level — similar to how a human researcher would click through to related articles.
