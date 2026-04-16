@@ -11,6 +11,12 @@ from groq import RateLimitError, APIStatusError
 _RETRYABLE = (RateLimitError,)
 _MAX_RETRIES = 5
 _BASE_DELAY = 2.0  # seconds
+# Model choice: llama-3.3-70b-versatile (default)
+# This model produces the best synthesis and citation quality on Groq's free tier.
+# If you hit rate limits (429s) during eval runs, switch to llama-3.1-8b-instant —
+# it runs on a separate rate-limit pool and is practical for batch runs at the cost
+# of weaker reasoning. mixtral-8x7b-32768 was a prior option but has been
+# decommissioned by Groq.
 _MODEL = "llama-3.3-70b-versatile"
 
 

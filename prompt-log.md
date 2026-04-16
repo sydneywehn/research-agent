@@ -221,3 +221,33 @@ Found two examples: bc040a8f (5 steps, 2008 vs COVID — Wikipedia×2 + FRED fai
 
 ---
 
+## [2026-04-16 16:40:00] User
+
+Still hitting rate limits on llama-3.3-70b-versatile. Switch to mixtral-8x7b-32768.
+
+---
+
+## [2026-04-16 16:40:00] Assistant
+
+Updated _MODEL in core/llm.py to mixtral-8x7b-32768. Updated all three references in README.md to match.
+
+---
+
+## [2026-04-16 16:42:00] Assistant
+
+Updated README.md LLM section: heading, choice line, and bullet all changed from mixtral-8x7b-32768 to llama-3.1-8b-instant. Bullet now explains the separate rate-limit pool rationale, consistent with the comment in core/llm.py.
+
+---
+
+## [2026-04-16 16:45:00] User
+
+Add a --single-pass flag to agent.py that sets MAX_STEPS=1. This will let us demonstrate the difference between single-pass and multi-step reasoning by running the same question twice and comparing outputs.
+
+---
+
+## [2026-04-16 16:45:00] Assistant
+
+Added --single-pass flag to agent.py using argparse. ResearchAgent now accepts a max_steps kwarg (defaults to MAX_STEPS=8 when None). Passing --single-pass sets max_steps=1. The CLI prints "[single-pass mode]" when active so output files are easy to distinguish.
+
+---
+

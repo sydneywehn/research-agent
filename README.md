@@ -76,13 +76,13 @@ An index of all runs is appended to `traces/index.jsonl` for easy querying.
 
 ## Key Design Decisions
 
-### LLM: Groq (llama-3.3-70b-versatile)
+### LLM: Groq (llama-3.1-8b-instant)
 
-**Choice**: Groq's free tier running `llama-3.3-70b-versatile`.
+**Choice**: Groq's free tier running `llama-3.1-8b-instant`.
 
 **Why Groq over a local model:**
 - No GPU required — reviewers can run the agent on any machine without installing Ollama or downloading multi-GB weights
-- `llama-3.3-70b-versatile` has strong instruction-following and JSON output reliability, which matters for the ReAct loop's structured response format
+- `llama-3.1-8b-instant` runs on a separate rate-limit pool from the larger Groq models, making it practical for multi-step eval runs without hitting 429s
 - Groq's inference is fast enough that multi-step runs complete in seconds rather than minutes
 
 **Tradeoffs vs. a local model (e.g. Ollama + Llama 3.2-3B):**
@@ -310,6 +310,14 @@ The Federal Reserve's response to the 2008 financial crisis involved invoking em
 **[REASONING — model analysis/inference]**
 The 2008 crisis required a more comprehensive unconventional response to stabilize the financial system. The COVID-19 response was more targeted, focused on supporting small businesses and households rather than systemic financial stabilization.
 
+
+**Single-pass output (MAX_STEPS=1):**
+The Federal Reserve's monetary policy response to the 2008 financial crisis and COVID-19 differed in terms of the specific policies implemented. During the 2008 crisis, the Federal Reserve implemented emergency authority to authorize new broad-based programs, with loans outstanding peaking at more than $1 trillion in late 2008. In contrast, during COVID-19, the Federal Reserve established programs like the Main Street Lending Program and Municipal Liquidity Facility.
+
+*Sources: 3 Wikipedia articles only*
+
+**Why multi-step is better:** The single-pass answer relies solely on Wikipedia and misses the academic analysis of QE programs and COVID monetary policy that arXiv provided in the multi-step run. The multi-step answer synthesizes across Wikipedia, arXiv, and FRED — producing a more complete, cited comparison.
+
 ---
 
 ### Example 2: Query self-correction (4 steps)
@@ -326,6 +334,10 @@ The arXiv search results include papers such as 'Changing Data Sources in the Ag
 **[REASONING — model analysis/inference]**
 While the search results do not provide direct information on using machine learning for credit risk assessment, they highlight the growing importance of machine learning in various fields. The agent identified this gap and rephrased its query three times before synthesizing from the best available results — demonstrating honest acknowledgment of retrieval limitations rather than hallucinating citations.
 
+**Single-pass output (MAX_STEPS=1):**
+Unable to synthesize a complete answer. (Sources: 4 arXiv papers returned but none directly on-topic)
+
+**Why multi-step is better:** With only one step, the agent retrieved off-topic papers and couldn't synthesize an answer. Over 4 steps the multi-step agent rephrased its query three times, found the best available results, and produced a reasoned response — even acknowledging the retrieval gap honestly rather than failing silently.
 
 ---
 

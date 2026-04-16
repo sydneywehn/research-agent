@@ -82,10 +82,11 @@ Step {step} — respond with JSON only:"""
 # ---------------------------------------------------------------------------
 
 class ResearchAgent:
-    def __init__(self, llm: LLMClient, registry: ToolRegistry, tracer: Tracer):
+    def __init__(self, llm: LLMClient, registry: ToolRegistry, tracer: Tracer, max_steps: int | None = None):
         self._llm = llm
         self._registry = registry
         self._tracer = tracer
+        self._max_steps = max_steps if max_steps is not None else MAX_STEPS
 
     def run(self, question: str) -> tuple[str, RunTrace]:
         trace = self._tracer.new_run(question)
@@ -117,7 +118,7 @@ class ResearchAgent:
         all_citations: list[str] = []
         used_queries: set[str] = set()
 
-        for step_num in range(1, MAX_STEPS + 1):
+        for step_num in range(1, self._max_steps + 1):
             history = "\n\n".join(history_parts) if history_parts else "(no steps yet)"
             prompt = STEP_PROMPT.format(
                 system=system,
