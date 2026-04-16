@@ -297,7 +297,10 @@ The development of post-quantum cryptography is crucial for the banking sector, 
 
 ## Multi-Step Reasoning Examples
 
-### Example 1: Multi-source synthesis (5 steps)
+### Example 1: Multi-source synthesis
+
+**Multi-step output (5 steps):**
+
 **Question:** How did the Federal Reserve's monetary policy response to the 2008 financial crisis differ from its response to COVID-19?
 Full trace available at: `traces/bc040a8f.json`
 
@@ -320,7 +323,10 @@ The Federal Reserve's monetary policy response to the 2008 financial crisis and 
 
 ---
 
-### Example 2: Query self-correction (4 steps)
+### Example 2: Query self-correction
+
+**Multi-step output (4 steps):**
+
 **Question:** What recent academic research exists on using machine learning for credit risk assessment?
 Full trace available at: `traces/48e9c6e1.json`
 
