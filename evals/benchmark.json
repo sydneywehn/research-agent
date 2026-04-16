@@ -1,0 +1,186 @@
+{
+  "version": "1.0",
+  "description": "Banking research agent benchmark — 18 questions spanning factual, academic, data, multi-source, out-of-scope, and speculative categories.",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What is the Federal Reserve's discount window and how does it work?",
+      "category": "factual",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["lender of last resort", "primary credit", "interest rate"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q02",
+      "question": "What are the Basel III capital requirements for banks?",
+      "category": "factual",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["capital ratio", "tier 1", "liquidity"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q03",
+      "question": "What recent academic research exists on using machine learning for credit risk assessment?",
+      "category": "academic",
+      "expected_tools": ["arxiv"],
+      "required_facts": ["machine learning", "credit risk", "model"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 2
+    },
+    {
+      "id": "q04",
+      "question": "How did the Federal Reserve's monetary policy response to the 2008 financial crisis differ from its response to COVID-19?",
+      "category": "multi_source",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["quantitative easing", "interest rate", "2008", "COVID"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 2
+    },
+    {
+      "id": "q05",
+      "question": "What is the current US unemployment rate and how has it changed over the past year?",
+      "category": "data",
+      "expected_tools": ["fred", "wikipedia"],
+      "required_facts": ["unemployment", "percent"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q06",
+      "question": "Explain the relationship between yield curve inversions and recessions. Are there recent academic papers on this topic?",
+      "category": "multi_source",
+      "expected_tools": ["wikipedia", "arxiv"],
+      "required_facts": ["yield curve", "inversion", "recession", "Treasury"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 2
+    },
+    {
+      "id": "q07",
+      "question": "What is the best restaurant in New York City?",
+      "category": "out_of_scope",
+      "expected_tools": [],
+      "required_facts": [],
+      "forbidden_facts": ["Michelin", "Per Se", "Eleven Madison", "Le Bernardin"],
+      "expected_behavior": "refuse",
+      "min_citations": 0
+    },
+    {
+      "id": "q08",
+      "question": "What are the implications of quantum computing for banking encryption?",
+      "category": "speculative",
+      "expected_tools": ["wikipedia", "arxiv"],
+      "required_facts": ["quantum", "encryption", "banking"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q09",
+      "question": "What is quantitative easing and how does it affect inflation?",
+      "category": "factual",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["quantitative easing", "central bank", "asset purchase"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q10",
+      "question": "What recent academic papers exist on systemic risk in banking networks?",
+      "category": "academic",
+      "expected_tools": ["arxiv"],
+      "required_facts": ["systemic risk", "banking", "network"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 2
+    },
+    {
+      "id": "q11",
+      "question": "What is the Dodd-Frank Act and what were its main provisions?",
+      "category": "factual",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["Dodd-Frank", "financial reform", "consumer protection"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q12",
+      "question": "What is the current US federal funds rate?",
+      "category": "data",
+      "expected_tools": ["fred", "wikipedia"],
+      "required_facts": ["federal funds rate", "percent"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q13",
+      "question": "What is the Volcker Rule and how does it restrict bank trading?",
+      "category": "factual",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["Volcker Rule", "proprietary trading", "bank"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q14",
+      "question": "What academic research exists on stress testing methodologies for banks?",
+      "category": "academic",
+      "expected_tools": ["arxiv"],
+      "required_facts": ["stress test", "bank", "capital"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 2
+    },
+    {
+      "id": "q15",
+      "question": "What caused the 2008 financial crisis?",
+      "category": "multi_source",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["subprime", "mortgage", "Lehman", "housing"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q16",
+      "question": "How has US GDP growth changed over the past two years?",
+      "category": "data",
+      "expected_tools": ["fred", "wikipedia"],
+      "required_facts": ["GDP", "growth", "percent"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    },
+    {
+      "id": "q17",
+      "question": "Who won the Super Bowl this year?",
+      "category": "out_of_scope",
+      "expected_tools": [],
+      "required_facts": [],
+      "forbidden_facts": ["touchdown", "quarterback", "NFL"],
+      "expected_behavior": "refuse",
+      "min_citations": 0
+    },
+    {
+      "id": "q18",
+      "question": "How do Basel II and Basel III differ in their approach to capital adequacy requirements?",
+      "category": "multi_source",
+      "expected_tools": ["wikipedia"],
+      "required_facts": ["Basel II", "Basel III", "capital", "leverage ratio"],
+      "forbidden_facts": [],
+      "expected_behavior": "answer",
+      "min_citations": 1
+    }
+  ]
+}
