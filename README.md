@@ -234,6 +234,67 @@ The agent was evaluated against an 18-question benchmark spanning factual lookup
 
 ---
 
+## Reference Question Outputs
+
+
+### Q: What is the Federal Reserve's discount window and how does it work?
+**[RETRIEVED — from tool results]**
+The discount window is an instrument of monetary policy that allows eligible institutions to borrow money from the central bank, usually on a short-term basis, to meet temporary shortages of liquidity caused by internal or external disruptions [Source: https://en.wikipedia.org/wiki/Discount_window]. The total borrowings from the Federal Reserve as of 2026-02-01 were 4647.0 million dollars [Source: https://fred.stlouisfed.org/series/obs/BORROW]
+
+**[REASONING — model analysis/inference]**
+The discount window plays a crucial role in maintaining the stability of the financial system by providing a safety net for banks to meet their short-term liquidity needs. The recent borrowing data suggests that banks have been actively using the discount window to manage their liquidity, with borrowings fluctuating over the past year. This suggests that the discount window is an important tool for monetary policy and financial stability [REASONING].
+
+### Q: What are the Basel III capital requirements for banks?
+**[RETRIEVED — from tool results]**
+Basel III is a framework that sets international standards and minimums for bank capital requirements, stress tests, liquidity regulations, and leverage [Source: https://en.wikipedia.org/wiki/Basel_III]. The Basel III accord was developed in response to the deficiencies in financial regulation revealed by the 2008 financial crisis [Source: https://en.wikipedia.org/wiki/Basel_III].
+
+**[REASONING — model analysis/inference]**
+Model reasoning suggests that the exact capital requirements for banks under Basel III are not explicitly stated in the retrieved information. However, it can be inferred that Basel III introduces new capital charges for banks, including a leverage ratio and risk-based capital requirements [REASONING].
+
+### Q: What recent academic research exists on using machine learning for credit risk assessment?
+**[RETRIEVED — from tool results]**
+The arXiv search results include papers such as 'Changing Data Sources in the Age of Machine Learning for Official Statistics' [Source: https://arxiv.org/abs/2306.04338v1], 'Active learning for data streams: a survey' [Source: https://arxiv.org/abs/2302.08893v4], 'Physics-Inspired Interpretability Of Machine Learning Models' [Source: https://arxiv.org/abs/2304.02381v2], 'Privacy-preserving machine learning for healthcare: open challenges and future perspectives' [Source: https://arxiv.org/abs/2303.15563v1], and 'DOME: Recommendations for supervised machine learning validation in biology' [Source: https://arxiv.org/abs/2006.16189v4].
+
+**[REASONING — model analysis/inference]**
+While the search results do not provide direct information on using machine learning for credit risk assessment, they highlight the growing importance of machine learning in various fields and the need for reliable and accurate data-driven decision-making. The application of machine learning in credit risk assessment is a significant area of research, and it is likely that relevant papers may be found with more specific search queries or in other academic databases.
+
+### Q: How did the Federal Reserve's monetary policy response to the 2008 financial crisis differ from its response to COVID-19?
+**[RETRIEVED — from tool results]**
+The Federal Reserve's response to the 2008 financial crisis involved invoking emergency authority to authorize new broad-based programs and financial assistance to stabilize financial markets, with loans outstanding peaking at over $1 trillion in late 2008 [Source: https://en.wikipedia.org/wiki/Federal_Reserve_response_to_the_subprime_crisis]. The Federal Reserve implemented quantitative easing (QE) programs, liquidity facilities, and forward guidance operations from 2007 to 2018 [Source: https://arxiv.org/abs/2305.12318v1]. During the COVID-19 pandemic, the Federal Reserve engaged in expansionary monetary policy, including measures to boost real activity and calm financial markets [Source: https://arxiv.org/abs/2007.15419v1].
+
+**[REASONING — model analysis/inference]**
+The differences in the Federal Reserve's monetary policy responses to the 2008 financial crisis and the COVID-19 pandemic can be attributed to the distinct economic conditions and challenges posed by each crisis. The 2008 financial crisis required a more comprehensive and unconventional monetary policy response, including quantitative easing and emergency lending facilities, to stabilize the financial system. In contrast, the COVID-19 pandemic required a more targeted and flexible monetary policy response, including measures to support small businesses and households affected by the pandemic. [REASONING] The Federal Reserve's communication strategies during the COVID-19 pandemic also differed from those during previous periods of economic stress, with a distinct focus on unconventional monetary policy and financial stability [Source: https://arxiv.org/abs/2508.04830v1].
+
+### Q: What is the current US unemployment rate and how has it changed over the past year?
+**[RETRIEVED — from tool results]**
+The current US unemployment rate is 4.3% as of 2026-03-01 [Source: https://fred.stlouisfed.org/series/observations?series_id=UNRATE]. Recent observations include: 4.2% on 2025-03-01, 4.2% on 2025-04-01, 4.3% on 2025-05-01, 4.1% on 2025-06-01, 4.3% on 2025-07-01, 4.3% on 2025-08-01, 4.4% on 2025-09-01, 4.5% on 2025-11-01, 4.4% on 2025-12-01, 4.3% on 2026-01-01, 4.4% on 2026-02-01, and 4.3% on 2026-03-01 [Source: https://fred.stlouisfed.org/series/observations?series_id=UNRATE].
+
+**[REASONING — model analysis/inference]**
+Model reasoning suggests that the US unemployment rate has remained relatively stable over the past year, with some fluctuations. The rate decreased from 4.5% in November 2025 to 4.3% in January 2026 and remained at 4.3% as of March 2026.
+
+### Q: Explain the relationship between yield curve inversions and recessions. Are there recent academic papers on this topic?
+**[RETRIEVED — from tool results]**
+Yield curve inversions have been used as a predictor of recessions [Source: https://arxiv.org/abs/2101.09394v2]. A study found that the predictive ability of the yield spread can be improved by using machine learning algorithms to identify the best maturity pair and coefficients [Source: https://arxiv.org/abs/2101.09394v2]. Another study used penalized logistic regression models to predict the Great Recession and the Covid-19 recession in real-time [Source: https://arxiv.org/abs/2310.08536v5]. The E-Rule, a novel composite recession indicator, combines the yield curve and the Sahm rule to provide a holistic and early-warning measure of economic downturns [Source: https://arxiv.org/abs/2503.09839v1].
+
+**[REASONING — model analysis/inference]**
+Model reasoning suggests that the yield curve inversion is a significant indicator of recessions, and recent academic papers support this claim. The use of machine learning algorithms and composite indicators can improve the accuracy of recession predictions. However, it is essential to consider multiple factors and indicators when predicting recessions.
+
+### Q: What is the best restaurant in New York City?
+This question is outside the scope of this financial research assistant.
+
+Reason: The question is about restaurants, which is a non-financial topic.
+
+I can help with banking regulations, monetary policy, economic data, academic finance research, and related topics.
+
+### Q: What are the implications of quantum computing for banking encryption?
+**[RETRIEVED — from tool results]**
+Quantum computers can solve certain mathematical problems, such as integer factorization and discrete logarithm problems, which are the basis for many encryption algorithms [Source: https://en.wikipedia.org/wiki/Post-quantum_cryptography]. Post-quantum cryptography is the development of cryptographic algorithms that are secure against attacks by a quantum computer [Source: https://en.wikipedia.org/wiki/Post-quantum_cryptography]. Researchers are exploring new cryptographic algorithms, such as those based on lattice problems, hash functions, and code-based cryptography [Source: https://arxiv.org/abs/1109.3235v1, https://arxiv.org/abs/2402.00922v1].
+
+**[REASONING — model analysis/inference]**
+The development of post-quantum cryptography is crucial for the banking sector, as current encryption methods may be vulnerable to quantum computer attacks. The use of post-quantum cryptography can provide long-term security for banking transactions and data [Model Reasoning]. The impact of post-quantum cryptography on Central Bank Digital Currency (CBDC) is also being explored, with researchers examining the effects on CBDC design and security [Model Reasoning].
+
+---
+
 ## Multi-Step Reasoning Examples
 
 ### Example 1: Multi-source synthesis (5 steps)
